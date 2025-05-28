@@ -5,7 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 
-app.use(cors()); // Important for allowing frontend access
+app.use(cors({origin:'https://azurewebapp12-f2cmbuffa2gvfbaw.canadacentral-01.azurewebsites.net'})); // Important for allowing frontend access
 
 const menuItems = [
   { id: 1, name: 'Margherita Pizza', price: 12, image: '🍕' },
