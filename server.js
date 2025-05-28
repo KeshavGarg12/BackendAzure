@@ -2,9 +2,10 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-const PORT = process.env.PORT || 5000; // 🔑 This is CRUCIAL for Azure
+const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+
+app.use(cors()); // Important for allowing frontend access
 
 const menuItems = [
   { id: 1, name: 'Margherita Pizza', price: 12, image: '🍕' },
@@ -13,10 +14,14 @@ const menuItems = [
   { id: 4, name: 'Pasta Alfredo', price: 11, image: '🍝' },
 ];
 
+app.get('/', (req, res) => {
+  res.send("Hii welcome to home page");
+});
+
 app.get('/menu', (req, res) => {
   res.json(menuItems);
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });
