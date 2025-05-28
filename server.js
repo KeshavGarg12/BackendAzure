@@ -12,6 +12,10 @@ const menuItems = [
   { id: 4, name: 'Pasta Alfredo', price: 11, image: '🍝' },
 ];
 
+app.get('/', (req, res) => {
+  res.send("Hii welcome to home page");
+});
+
 app.get('/menu', (req, res) => {
   res.json(menuItems);
 });
